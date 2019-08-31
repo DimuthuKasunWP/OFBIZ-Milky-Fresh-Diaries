@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://ofbiz.apache.org/Widget-Form" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Form http://ofbiz.apache.org/dtds/widget-form.xsd">
+
+ <form name="AddDetails" type="single" target="AddToCart">
+        <!-- We have this utility in OFBiz to render form based on service definition.
+             Service attributes will automatically lookedup and will be shown on form
+        -->
+        <!-- <auto-fields-service service-name="AddToCart"/>
+        <field name="ofbizDemoTypeId" title="${uiLabelMap.CommonType}">
+            <drop-down allow-empty="false" current-description="">
+                -We have made this drop down options dynamic(Values from db) using this
+                <entity-options description="${description}" key-field-name="ofbizDemoTypeId" entity-name="OfbizDemoType">
+                    <entity-order-by field-name="description"/>
+                </entity-options>
+            </drop-down>
+
+        </field> -->
+        <field name="noConditionFind"><hidden value="Y"/> <!-- if this isn't there then with all fields empty no query will be done --></field>
+        <field name="itemCode" title="${uiLabelMap.itemCode}"><text-find/></field>
+        <field name="Qty" title="${uiLabelMap.Qty}"><text-find/></field>
+        <field name="type" title="${uiLabelMap.type}"><text-find/></field>
+        
+        <field name="submitButton" style="centerCenterBar" title="${uiLabelMap.CommonAdd}"><submit button-type="button"/></field>
+    </form>
+</forms>
